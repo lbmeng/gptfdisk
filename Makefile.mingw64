@@ -25,7 +25,7 @@ lint:	#no pre-reqs
 	lint $(SRCS)
 
 clean:	#no pre-reqs
-	rm -f core *.o *~ gdisk64.exe sgdisk64.exe
+	rm -f core *.o *~ gdisk64.exe fixparts64.exe
 
 strip:	#no pre-reqs
 	$(STRIP) gdisk64.exe fixparts64.exe
