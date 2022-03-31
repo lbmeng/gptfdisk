@@ -1,7 +1,7 @@
 CXX=/usr/bin/i686-w64-mingw32-g++
 STRIP=/usr/bin/i686-w64-mingw32-strip
-CXXFLAGS=-O2 -Wall -static -static-libgcc -static-libstdc++ -D_FILE_OFFSET_BITS=64 -g
-#CXXFLAGS=-O2 -Wall -D_FILE_OFFSET_BITS=64 -I /usr/local/include -I/opt/local/include -g
+CXXFLAGS=-O2 -Wall -static -static-libgcc -static-libstdc++ -D_FILE_OFFSET_BITS=64
+#CXXFLAGS=-O2 -Wall -D_FILE_OFFSET_BITS=64 -I /usr/local/include -I/opt/local/include
 LIB_NAMES=guid gptpart bsd parttypes attributes crc32 mbrpart basicmbr mbr gpt support diskio diskio-windows
 MBR_LIBS=support diskio diskio-windows basicmbr mbrpart
 LIB_SRCS=$(NAMES:=.cc)
