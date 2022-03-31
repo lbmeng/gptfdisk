@@ -504,7 +504,7 @@ int GPTDataCL::DoOptions(int argc, char* argv[]) {
 // Create a hybrid or regular MBR from GPT data structures
 int GPTDataCL::BuildMBR(char* argument, int isHybrid) {
    int numParts, allOK = 1, i, origPartNum;
-   int eeLast, mbrNum = 0;
+   int eeLast = 0, mbrNum = 0;
    MBRPart newPart;
    BasicMBRData newMBR;
 
