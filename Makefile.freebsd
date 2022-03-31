@@ -1,6 +1,4 @@
-CC=clang
 CXX=clang++
-CFLAGS+=-D_FILE_OFFSET_BITS=64
 #CXXFLAGS+=-Wall -D_FILE_OFFSET_BITS=64 -D USE_UTF16 -I/usr/local/include
 CXXFLAGS+=-Wall -D_FILE_OFFSET_BITS=64 -I /usr/local/include 
 LDFLAGS+=
