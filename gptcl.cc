@@ -26,6 +26,8 @@
 #include <popt.h>
 #include "gptcl.h"
 
+using namespace std;
+
 GPTDataCL::GPTDataCL(void) {
    attributeOperation = backupFile = partName = hybrids = newPartInfo = NULL;
    mbrParts = twoParts = outDevice = typeCode = partGUID = diskGUID = NULL;

@@ -69,18 +69,16 @@
 #define GPT_RESERVED 420
 #define NAME_SIZE 36 // GPT allows 36 UTF-16LE code units for a name in a 128 byte partition entry
 
-using namespace std;
-
-string ReadString(void);
-uint64_t GetNumber(uint64_t low, uint64_t high, uint64_t def, const string & prompt);
+std::string ReadString(void);
+uint64_t GetNumber(uint64_t low, uint64_t high, uint64_t def, const std::string & prompt);
 char GetYN(void);
-uint64_t IeeeToInt(string IeeeValue, uint64_t sSize, uint64_t low, uint64_t high, uint32_t sectorAlignment, uint64_t def = 0);
-string BytesToIeee(uint64_t size, uint32_t sectorSize);
-unsigned char StrToHex(const string & input, unsigned int position);
-int IsHex(string input); // Returns 1 if input can be hexadecimal number....
+uint64_t IeeeToInt(std::string IeeeValue, uint64_t sSize, uint64_t low, uint64_t high, uint32_t sectorAlignment, uint64_t def = 0);
+std::string BytesToIeee(uint64_t size, uint32_t sectorSize);
+unsigned char StrToHex(const std::string & input, unsigned int position);
+int IsHex(std::string input); // Returns 1 if input can be hexadecimal number....
 int IsLittleEndian(void); // Returns 1 if CPU is little-endian, 0 if it's big-endian
 void ReverseBytes(void* theValue, int numBytes); // Reverses byte-order of theValue
 void WinWarning(void);
-string ToLower(const string& input);
+std::string ToLower(const std::string& input);
 
 #endif
