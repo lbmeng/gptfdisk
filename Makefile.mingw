@@ -13,13 +13,13 @@ DEPEND= makedepend $(CFLAGS)
 all:	gdisk fixparts
 
 gdisk:	$(LIB_OBJS) gdisk.o gpttext.o
-	$(CXX) $(CXXFLAGS) $(LIB_OBJS) gdisk.o gpttext.o -lrpcrt4 -static-libgcc -o gdisk32.exe
+	$(CXX) $(CXXFLAGS) $(LIB_OBJS) gdisk.o gpttext.o -lrpcrt4 -o gdisk32.exe
 
 sgdisk: $(LIB_OBJS) sgdisk.o
-	$(CXX) $(CXXFLAGS) $(LIB_OBJS) sgdisk.o -lpopt -static-libgcc -o sgdisk32.exe
+	$(CXX) $(CXXFLAGS) $(LIB_OBJS) sgdisk.o -lpopt -o sgdisk32.exe
 
 fixparts: $(MBR_LIB_OBJS) fixparts.o
-	$(CXX) $(CXXFLAGS) $(MBR_LIB_OBJS) fixparts.o $(LDFLAGS) -static-libgcc -o fixparts32.exe
+	$(CXX) $(CXXFLAGS) $(MBR_LIB_OBJS) fixparts.o $(LDFLAGS) -o fixparts32.exe
 
 lint:	#no pre-reqs
 	lint $(SRCS)
