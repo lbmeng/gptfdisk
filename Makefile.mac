@@ -31,9 +31,6 @@ sgdisk: $(LIB_OBJS) gptcl.o sgdisk.o
 fixparts: $(MBR_LIB_OBJS) fixparts.o
 	$(CXX) $(MBR_LIB_OBJS) fixparts.o $(LDFLAGS) $(FATBINFLAGS) -o fixparts
 
-testguid:	$(LIB_OBJS) testguid.o
-	$(CXX) $(LIB_OBJS) testguid.o -o testguid
-
 lint:	#no pre-reqs
 	lint $(SRCS)
 
