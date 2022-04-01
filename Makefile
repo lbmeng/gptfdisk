@@ -1,5 +1,5 @@
-#CXXFLAGS+=-Wall -D_FILE_OFFSET_BITS=64 -D USE_UTF16
-CXXFLAGS+=-Wall -D_FILE_OFFSET_BITS=64
+#CXXFLAGS+=-O2 -Wall -D_FILE_OFFSET_BITS=64 -D USE_UTF16
+CXXFLAGS+=-O2 -Wall -D_FILE_OFFSET_BITS=64
 LDFLAGS+=
 LIB_NAMES=crc32 support guid gptpart mbrpart basicmbr mbr gpt bsd parttypes attributes diskio diskio-unix
 MBR_LIBS=support diskio diskio-unix basicmbr mbrpart
