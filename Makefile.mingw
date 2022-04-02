@@ -1,5 +1,5 @@
-CXX=/usr/bin/i686-w64-mingw32-g++
-STRIP=/usr/bin/i686-w64-mingw32-strip
+CXX=i686-w64-mingw32-g++
+STRIP=i686-w64-mingw32-strip
 CXXFLAGS=-O2 -Wall -D_FILE_OFFSET_BITS=64
 #CXXFLAGS=-O2 -Wall -D_FILE_OFFSET_BITS=64 -I /usr/local/include -I/opt/local/include
 LDFLAGS+=
