@@ -28,12 +28,8 @@ Windows Use Notes
 
 The Windows version of GPT fdisk was added with version 0.6.2 of the
 package. The Windows binary package includes the gdisk.exe interactive
-text-mode program file but no equivalent to the sgdisk program that's
-available with Linux, FreeBSD, and OS X builds. In theory, an sgdisk.exe
-for Windows could be built if the popt library were installed. I've not
-attempted to do this myself, though. If you care to try, check
-http://gnuwin32.sourceforge.net/packages/popt.htm for information on popt
-for Windows.
+text-mode program file as well as the sgdisk program that's available
+with Linux, FreeBSD, and OS X builds.
 
 Beginning with version 0.8.10, I'm distributing both 32-bit and 64-bit
 binaries, which include the strings "32" or "64" in their names. The 32-bit
@@ -47,10 +43,11 @@ certain partition table problems that can be created by buggy partitioning
 software. Windows seems to be unfazed by most such problems, but I've not
 done an extensive survey of Windows partitioning tools on this score.
 
-To install the programs, copy the gdisk32.exe and fixparts32.exe (or
-gdisk64.exe and fixparts64.exe) program files to any directory on your
-path, such as C:\Windows. Alternatively, you can change to the program's
-directory or type its complete path whenever you use it.
+To install the programs, copy the gdisk32.exe, sgdisk32.exe and fixparts32.exe
+(or gdisk64.exe, sgdisk64.exe and fixparts64.exe) program files, as well as
+the required DLLs to any directory on your path, such as C:\Windows.
+Alternatively, you can change to the program's directory or type its complete
+path whenever you use it.
 
 To use the programs, first launch a Command Prompt as the Administrator. To
 do this, locate the Command Prompt program icon, right-click it, and select
@@ -103,13 +100,19 @@ Source Code and Compilation Issues
 I have successfully compiled GPT fdisk using three different Windows
 compilers:
 
-- MinGW (http://www.mingw.org), and in particular its Linux-hosted
-  cross-compiler -- Under Ubuntu Linux, the Makefile.mingw and
-  Makefile.mingw64 files enable compilation of the software via MinGW.
-  (Type "make -f Makefile.mingw" to compile 32-bit binaries, and "make -f
-  Makefile.mingw64" to compile 64-bit binaries.) If you try to compile
-  using another compiler or even using MinGW under Windows or another Linux
-  variety, you may need to adjust the Makefile.mingw options.
+- MinGW (https://www.mingw-w64.org/), either Linux-hosted cross-compiler
+  -- Under Ubuntu / Fedora Linux, or Windows-hosted compiler -- MSYS2
+  (https://www.msys2.org), the Makefile.mingw and Makefile.mingw64 files
+  enable compilation of the software via MinGW. (Type "make -f
+  Makefile.mingw" to compile 32-bit binaries, and "make -f Makefile.mingw64"
+  to compile 64-bit binaries.) For MSYS2, make sure you install the popt and
+  gettext packages (pacman -S mingw-w64-x86_64-popt mingw-w64-x86_64-gettext
+  if you are to compile 64-bit binaries; change 'x86_64' to 'i686' for 32-bit
+  packages). For Linux-hosted cross-compiler, the Linux distribution does not
+  provide the popt packages for MinGW, but you can manually copy the header
+  and the libraries in the MSYS2 package to the sysroot in the Linux-hosted
+  MinGW cross-compiler. If you try to compile using another compiler or
+  another Linux variety, you may need to adjust the Makefile.mingw options.
 
 - Microsoft Visual C++ 2008 Express
   (http://www.microsoft.com/express/Windows/) -- This compiler requires a
