@@ -10,7 +10,7 @@ MBR_LIB_OBJS=$(MBR_LIBS:=.o)
 LIB_HEADERS=$(LIB_NAMES:=.h)
 DEPEND= makedepend $(CFLAGS)
 
-all:	gdisk fixparts
+all:	gdisk sgdisk fixparts
 
 gdisk:	$(LIB_OBJS) gdisk.o gpttext.o
 	$(CXX) $(CXXFLAGS) $(LIB_OBJS) gdisk.o gpttext.o -lrpcrt4 -o gdisk32.exe
@@ -25,10 +25,10 @@ lint:	#no pre-reqs
 	lint $(SRCS)
 
 clean:	#no pre-reqs
-	rm -f core *.o *~ gdisk32.exe fixparts32.exe
+	rm -f core *.o *~ gdisk32.exe sgdisk32.exe fixparts32.exe
 
 strip:	#no pre-reqs
-	$(STRIP) gdisk32.exe fixparts32.exe
+	$(STRIP) gdisk32.exe sgdisk32.exe fixparts32.exe
 
 # what are the source dependencies
 depend: $(SRCS)
